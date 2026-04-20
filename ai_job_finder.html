@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Job Finder — Frontend React/TS | Pune</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #f5f5f0; color: #1a1a1a; padding: 2rem 1rem; }
+  .jf-wrap { max-width: 720px; margin: 0 auto; padding: 1.5rem; background: #fff; border-radius: 16px; border: 1px solid #e5e5e0; }
+  .jf-title { font-size: 22px; font-weight: 500; margin: 0 0 4px; }
+  .jf-sub { font-size: 14px; color: #666; margin: 0 0 1.5rem; }
+  .jf-profile { background: #f9f9f6; border-radius: 12px; border: 0.5px solid #ddd; padding: 1rem 1.25rem; margin-bottom: 1.5rem; }
+  .jf-profile-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 10px; }
+  .jf-chip-label { font-size: 11px; color: #999; margin: 0 0 4px; text-transform: uppercase; letter-spacing: 0.04em; }
+  .jf-chip { font-size: 13px; font-weight: 500; color: #1a1a1a; margin: 0; }
+  .jf-skill-row { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+  .jf-badge { font-size: 12px; padding: 3px 10px; border-radius: 99px; border: 0.5px solid #ccc; color: #555; background: #fff; }
+  .jf-section-title { font-size: 12px; font-weight: 500; color: #999; margin: 0 0 10px; text-transform: uppercase; letter-spacing: 0.06em; }
+  .jf-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; margin-bottom: 1.5rem; }
+  .jf-card { background: #fff; border: 0.5px solid #e0e0da; border-radius: 12px; padding: 1rem 1.25rem; display: flex; flex-direction: column; gap: 10px; text-decoration: none; transition: border-color 0.15s; }
+  .jf-card:hover { border-color: #aaa; }
+  .jf-card-top { display: flex; align-items: center; gap: 10px; }
+  .jf-logo { width: 32px; height: 32px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 500; flex-shrink: 0; }
+  .jf-card-name { font-size: 14px; font-weight: 500; color: #1a1a1a; }
+  .jf-card-desc { font-size: 12px; color: #666; line-height: 1.5; flex: 1; }
+  .jf-card-footer { display: flex; align-items: center; justify-content: space-between; }
+  .jf-tag { font-size: 11px; color: #1a6bbf; background: #e8f0fe; padding: 2px 8px; border-radius: 99px; }
+  .jf-arrow { font-size: 14px; color: #aaa; }
+  .jf-how { background: #fff; border: 0.5px solid #e0e0da; border-radius: 12px; padding: 1rem 1.25rem; margin-bottom: 1.5rem; }
+  .jf-steps { display: flex; flex-direction: column; gap: 12px; margin-top: 10px; }
+  .jf-step { display: flex; align-items: flex-start; gap: 12px; }
+  .jf-step-num { width: 24px; height: 24px; border-radius: 50%; background: #e8f0fe; color: #1a6bbf; font-size: 12px; font-weight: 500; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
+  .jf-step-text { font-size: 13px; color: #1a1a1a; line-height: 1.6; }
+  .jf-step-text b { font-weight: 500; }
+  .jf-tip { background: #fffbeb; border: 0.5px solid #f0d060; border-radius: 8px; padding: 10px 14px; display: flex; gap: 10px; align-items: flex-start; }
+  .jf-tip-icon { font-size: 14px; flex-shrink: 0; margin-top: 1px; color: #b45309; }
+  .jf-tip-text { font-size: 13px; color: #92400e; line-height: 1.5; }
+  .jf-refresh-bar { display: flex; align-items: center; justify-content: space-between; padding: 10px 0 0; border-top: 0.5px solid #e5e5e0; margin-top: 1rem; }
+  .jf-refresh-text { font-size: 12px; color: #999; }
+</style>
+</head>
+<body>
+<div class="jf-wrap">
+  <p class="jf-title">Job Finder — Frontend React/TS</p>
+  <p class="jf-sub">Pre-configured for your profile. Click any platform to open filtered results.</p>
+
+  <div class="jf-profile">
+    <div class="jf-profile-grid">
+      <div><p class="jf-chip-label">Role</p><p class="jf-chip">Senior Frontend Developer</p></div>
+      <div><p class="jf-chip-label">Location</p><p class="jf-chip">Pune, Maharashtra</p></div>
+      <div><p class="jf-chip-label">Experience</p><p class="jf-chip">5+ Years</p></div>
+      <div><p class="jf-chip-label">CTC Target</p><p class="jf-chip">15L – 20L+</p></div>
+    </div>
+    <div class="jf-skill-row">
+      <span class="jf-badge">React.js</span>
+      <span class="jf-badge">TypeScript</span>
+      <span class="jf-badge">Redux</span>
+      <span class="jf-badge">Node.js</span>
+      <span class="jf-badge">Three.js</span>
+      <span class="jf-badge">AWS</span>
+      <span class="jf-badge">PostgreSQL</span>
+      <span class="jf-badge">REST APIs</span>
+      <span class="jf-badge">Cesium</span>
+      <span class="jf-badge">Next.js</span>
+      <span class="jf-badge">WebGL / 3D</span>
+      <span class="jf-badge">Micro Frontends</span>
+    </div>
+  </div>
+
+  <p class="jf-section-title">Open on platform — last 7 days, Pune</p>
+  <div class="jf-cards">
+    <a class="jf-card" href="https://www.linkedin.com/jobs/search/?keywords=Senior%20Frontend%20Developer%20React%20TypeScript&location=Pune%2C%20Maharashtra%2C%20India&f_TPR=r604800&f_E=4%2C5&sortBy=DD" target="_blank">
+      <div class="jf-card-top">
+        <div class="jf-logo" style="background:#E8F0FE;color:#1a73e8;">in</div>
+        <p class="jf-card-name">LinkedIn</p>
+      </div>
+      <p class="jf-card-desc">Senior/Lead level · Pune · Past week · Sorted by date</p>
+      <div class="jf-card-footer"><span class="jf-tag">Best for referrals</span><span class="jf-arrow">↗</span></div>
+    </a>
+    <a class="jf-card" href="https://www.naukri.com/react-typescript-nextjs-developer-jobs-in-pune?experience=5&jobAge=7&salary=1500000&skills=react%2Ctypescript%2Cnextjs%2Credux%2Cnodejs" target="_blank">
+      <div class="jf-card-top">
+        <div class="jf-logo" style="background:#fff3e0;color:#e65100;">N</div>
+        <p class="jf-card-name">Naukri</p>
+      </div>
+      <p class="jf-card-desc">React + TS + Next.js · Pune · 5 yr exp · 15L+ · Last 7 days</p>
+      <div class="jf-card-footer"><span class="jf-tag">Most MNC listings</span><span class="jf-arrow">↗</span></div>
+    </a>
+    <a class="jf-card" href="https://in.indeed.com/jobs?q=Senior+Frontend+Developer+React+TypeScript+Next.js&l=Pune%2C+Maharashtra&fromage=7&sort=date" target="_blank">
+      <div class="jf-card-top">
+        <div class="jf-logo" style="background:#e8f5e9;color:#1b5e20;">I</div>
+        <p class="jf-card-name">Indeed</p>
+      </div>
+      <p class="jf-card-desc">Frontend + Next.js · Pune · Past 7 days · Sorted newest first</p>
+      <div class="jf-card-footer"><span class="jf-tag">High volume</span><span class="jf-arrow">↗</span></div>
+    </a>
+    <a class="jf-card" href="https://wellfound.com/role/l/react-developer/pune" target="_blank">
+      <div class="jf-card-top">
+        <div class="jf-logo" style="background:#f3e5f5;color:#4a148c;">W</div>
+        <p class="jf-card-name">Wellfound</p>
+      </div>
+      <p class="jf-card-desc">React · Pune · Startups & funded companies · Direct contact</p>
+      <div class="jf-card-footer"><span class="jf-tag">Startup jobs</span><span class="jf-arrow">↗</span></div>
+    </a>
+    <a class="jf-card" href="https://www.glassdoor.co.in/Job/pune-react-typescript-developer-jobs-SRCH_IL.0,4_IC2856202_KO5,31.htm?fromAge=7&sortBy=date_desc" target="_blank">
+      <div class="jf-card-top">
+        <div class="jf-logo" style="background:#e0f7fa;color:#006064;">G</div>
+        <p class="jf-card-name">Glassdoor</p>
+      </div>
+      <p class="jf-card-desc">React + TS · Pune · Last 7 days · Salary + reviews visible</p>
+      <div class="jf-card-footer"><span class="jf-tag">Salary data</span><span class="jf-arrow">↗</span></div>
+    </a>
+    <a class="jf-card" href="https://cutshort.io/jobs/frontend-developer-jobs-in-pune?skills=React.js,TypeScript,Next.js,Redux,Node.js,WebGL,Micro+Frontends&experience=5-10&location=Pune" target="_blank">
+      <div class="jf-card-top">
+        <div class="jf-logo" style="background:#e8f5e9;color:#2e7d32;">C</div>
+        <p class="jf-card-name">Cutshort</p>
+      </div>
+      <p class="jf-card-desc">React + TS + Next.js · Pune · 5–10 yr · Skill-matched · Direct hiring</p>
+      <div class="jf-card-footer"><span class="jf-tag">AI-matched roles</span><span class="jf-arrow">↗</span></div>
+    </a>
+  </div>
+
+  <div class="jf-how">
+    <p class="jf-section-title">Kaise kaam karta hai</p>
+    <div class="jf-steps">
+      <div class="jf-step"><div class="jf-step-num">1</div><p class="jf-step-text"><b>Har platform ka link pre-filtered hai</b> — location, role, date range, experience level sab already set hai URL mein. Click karte hi filtered results khulenge.</p></div>
+      <div class="jf-step"><div class="jf-step-num">2</div><p class="jf-step-text"><b>LinkedIn pe jaake "Easy Apply" filter add kar</b> — isse sirf woh jobs dikhenge jahan directly LinkedIn se apply ho sakta hai bina redirect ke.</p></div>
+      <div class="jf-step"><div class="jf-step-num">3</div><p class="jf-step-text"><b>Naukri pe "Date Posted" = Last 7 Days filter confirm kar</b> — kabhi kabhi URL se filter reset ho jaata hai, manually verify kar lo.</p></div>
+      <div class="jf-step"><div class="jf-step-num">4</div><p class="jf-step-text"><b>Wellfound pe ek profile bana</b> — ek baar profile banao, wahan se ek click mein sab jobs pe apply kar sakte ho, CV alag se upload nahi karna padta.</p></div>
+      <div class="jf-step"><div class="jf-step-num">5</div><p class="jf-step-text"><b>Cutshort pe skills Next.js, WebGL aur Micro Frontends bhi add kar</b> — ye platform skill-based matching karta hai, zyada relevant results milenge.</p></div>
+      <div class="jf-step"><div class="jf-step-num">6</div><p class="jf-step-text"><b>Bookmark this page</b> — roz subah ek baar ye page kholo, saare platforms check karo, 7-day filter fresh results dega.</p></div>
+    </div>
+  </div>
+
+  <div class="jf-tip">
+    <span class="jf-tip-icon">!</span>
+    <p class="jf-tip-text">LinkedIn + Naukri combo sabse zyada kaam aata hai Pune ke senior roles ke liye. Subah 8–10am ke beech apply karo — recruiters usi waqt active hote hain aur aapki application top pe hogi.</p>
+  </div>
+
+  <div class="jf-refresh-bar">
+    <span class="jf-refresh-text">Roz fresh results milenge — daily check karo</span>
+  </div>
+</div>
+</body>
+</html>
